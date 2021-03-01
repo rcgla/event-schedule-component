@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+
+	<title>Sample svelte component</title>
+
+	<link rel='stylesheet' href='/global.css'>
+	<link rel='stylesheet' href='/build/bundle.css'>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js" integrity="sha512-0fcCRl828lBlrSCa8QJY51mtNqTcHxabaXVLPgw/jPA5Nutujh6CbTdDgRzl9aSPYW/uuE7c4SffFUQFBAy6lg==" crossorigin="anonymous"></script>
+	<script defer src='/build/bundle.js'></script>
+	<script type="module">
+		import data from './sampleData.js';
+		
+		document.addEventListener("DOMContentLoaded", e => {
+			// use the last event because i know it's the summercamp event :) 
+			document.querySelector("event-schedule").event = data.events[data.events.length-1]; 
+		});
+	</script>
+</head>
+
+<body>
+	<event-schedule></event-schedule>
+</body>
+</html>
